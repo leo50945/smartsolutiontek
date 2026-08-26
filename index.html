@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f5" />
+    <title>Création de site web | SmartSolutionTek</title>
+    <meta name="description" content="Discutez avec SmartSolutionTek sur WhatsApp pour parler de votre projet de site web." />
+    <meta property="og:title" content="Création de site web | SmartSolutionTek" />
+    <meta property="og:description" content="Discutez avec SmartSolutionTek sur WhatsApp pour parler de votre projet de site web." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_HT" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="min-h-[100svh] bg-[#f6f7f5] text-slate-950 antialiased">
+    <main class="page-shell flex min-h-[100svh] flex-col px-5 py-7 sm:px-8 sm:py-10">
+      <header class="brand opacity-0" aria-label="SmartSolutionTek">
+        <a class="inline-flex items-center gap-2.5 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-4" href="#continuer">
+          <span class="brand-mark" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+          <span>
+            <span class="block text-[15px] font-semibold tracking-[-0.02em]">SmartSolutionTek</span>
+            <span class="mt-0.5 block text-xs text-slate-500">Solutions numériques professionnelles</span>
+          </span>
+        </a>
+      </header>
+
+      <section class="content-wrap flex flex-1 items-center justify-center" aria-labelledby="page-title">
+        <div class="card w-full max-w-[440px] opacity-0">
+          <div class="icon-orb" aria-hidden="true"><i data-lucide="message-circle"></i></div>
+          <h1 id="page-title" class="mt-6 text-[32px] font-semibold leading-[1.1] tracking-[-0.045em] text-slate-950 sm:text-4xl">Prêt à continuer&nbsp;?</h1>
+          <p class="mt-4 text-[17px] leading-7 text-slate-600">Vous allez être redirigé vers WhatsApp pour discuter directement de votre projet de site web.</p>
+          <p class="mt-3 text-sm leading-6 text-slate-500">Expliquez simplement ce dont vous avez besoin, même si votre idée n'est pas encore bien définie.</p>
+
+          <div class="cta-area mt-8 opacity-0" id="continuer">
+            <a id="whatsapp-cta" class="cta-button group" href="https://wa.me/50942536029?text=Bonjour%2C%20je%20viens%20de%20voir%20votre%20publicit%C3%A9%20concernant%20la%20cr%C3%A9ation%20de%20site%20web%20et%20j%27aimerais%20en%20discuter." aria-label="Continuer sur WhatsApp pour discuter de votre projet de site web">
+              <span>Oui, continuer sur WhatsApp</span>
+              <i data-lucide="arrow-right" aria-hidden="true"></i>
+            </a>
+            <p class="mt-4 text-center text-sm leading-6 text-slate-500">La discussion s'ouvrira directement dans WhatsApp.<br />Aucune inscription nécessaire.</p>
+          </div>
+
+          <div id="fallback" class="fallback mt-5 hidden" role="status">
+            <p>WhatsApp ne s'est pas ouvert&nbsp;?</p>
+            <button id="copy-number" type="button">Copier le numéro&nbsp;: +509 42 53 6029</button>
+          </div>
+        </div>
+      </section>
+
+      <p class="trust-note opacity-0"><i data-lucide="shield-check" aria-hidden="true"></i> Une conversation simple et directe.</p>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
