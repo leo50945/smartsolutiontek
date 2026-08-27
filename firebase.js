@@ -8,6 +8,9 @@ import {
   setDoc,
   addDoc,
   collection,
+  limit,
+  orderBy,
+  query,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -46,5 +49,15 @@ export function subscribeToOverview(callback) {
   return onSnapshot(overviewRef, (snapshot) => callback(snapshot.exists() ? snapshot.data() : {}), (error) => {
     console.warn("Firebase dashboard unavailable:", error);
     callback({});
+  });
+}
+
+export function subscribeToFeedback(callback) {
+  const recentFeedback = query(collection(db, "feedback"), orderBy("createdAt", "desc"), limit(12));
+  return onSnapshot(recentFeedback, (snapshot) => {
+    callback(snapshot.docs.map((item) => item.data()));
+  }, (error) => {
+    console.warn("Firebase feedback list unavailable:", error);
+    callback([]);
   });
 }

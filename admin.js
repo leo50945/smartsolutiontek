@@ -1,4 +1,4 @@
-import { subscribeToOverview } from "./firebase.js";
+import { subscribeToFeedback, subscribeToOverview } from "./firebase.js";
 
 const ADMIN_PASSWORD = "leo1111";
 const authKey = "sst_admin_authenticated";
@@ -30,6 +30,23 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("click-count").textContent = clicks;
     document.getElementById("feedback-count").textContent = stats.feedbackSubmitted || 0;
     document.getElementById("conversion-rate").textContent = views ? `${Math.round((clicks / views) * 100)} %` : "0 %";
+  });
+  subscribeToFeedback((feedback) => {
+    const list = document.getElementById("feedback-reasons");
+    document.getElementById("feedback-total").textContent = `${feedback.length} retour${feedback.length > 1 ? "s" : ""}`;
+    list.replaceChildren();
+    if (!feedback.length) {
+      const empty = document.createElement("li");
+      empty.className = "feedback-empty";
+      empty.textContent = "Aucun retour pour le moment.";
+      list.append(empty);
+      return;
+    }
+    feedback.forEach((entry) => {
+      const item = document.createElement("li");
+      item.textContent = entry.reason || "Non précisé";
+      list.append(item);
+    });
   });
   document.getElementById("logout").addEventListener("click", () => { sessionStorage.removeItem(authKey); window.location.replace("login.html"); });
 });
