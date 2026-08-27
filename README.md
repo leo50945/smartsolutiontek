@@ -34,4 +34,6 @@ Google Analytics affichera alors les visites (`page_view`) et les clics WhatsApp
 
 Les pages `login.html` et `stats.html` existent sans lien depuis la landing. Le mot de passe demandé est `leo1111`.
 
-Important : cette protection et les chiffres actuels sont locaux au navigateur ; avec un site statique, ils ne peuvent ni sécuriser réellement l'accès ni mesurer tous les visiteurs. Pour un tableau fiable accessible depuis n'importe quel appareil, connectez Google Analytics, Meta Pixel ou un backend (Firebase, par exemple).
+La landing synchronise désormais les compteurs globaux dans Cloud Firestore : visites, réponses Oui / Non, clics WhatsApp et retours facultatifs. La page `stats.html` se met à jour en direct.
+
+Important : la protection par mot de passe dans un site statique reste visuelle ; `leo1111` est visible dans le code. Les règles Firebase « test mode » conviennent temporairement au test, mais doivent être remplacées par des règles Firestore sécurisées avant un usage durable.

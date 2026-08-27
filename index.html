@@ -69,8 +69,38 @@
       <p class="trust-note opacity-0"><i data-lucide="shield-check" aria-hidden="true"></i> Une conversation simple et directe.</p>
     </main>
 
+    <div class="modal-backdrop" id="interest-modal" hidden>
+      <section class="feedback-modal" role="dialog" aria-modal="true" aria-labelledby="interest-title">
+        <button class="modal-close" type="button" data-close-modal aria-label="Fermer"><i data-lucide="x" aria-hidden="true"></i></button>
+        <div class="modal-icon" aria-hidden="true"><i data-lucide="message-circle-heart"></i></div>
+        <div id="interest-panel">
+          <p class="eyebrow">Votre projet</p>
+          <h2 id="interest-title">Êtes-vous intéressé&nbsp;?</h2>
+          <p>Un site web peut donner plus de visibilité à votre activité.</p>
+          <div class="modal-actions">
+            <button class="modal-primary" id="interest-yes" type="button">Oui, en discuter <i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+            <button class="modal-secondary" id="interest-no" type="button">Pas pour le moment</button>
+          </div>
+        </div>
+        <form id="feedback-panel" hidden>
+          <button class="modal-back" id="feedback-back" type="button"><i data-lucide="arrow-left" aria-hidden="true"></i> Retour</button>
+          <p class="eyebrow">Un dernier mot</p>
+          <h2>Qu’est-ce qui vous retient&nbsp;?</h2>
+          <p>Votre réponse nous aide à faire mieux.</p>
+          <div class="reason-options" role="group" aria-label="Raison principale">
+            <button type="button" data-reason="Le prix">Le prix</button>
+            <button type="button" data-reason="Pas prêt">Pas prêt</button>
+            <button type="button" data-reason="Pas assez clair">Pas assez clair</button>
+          </div>
+          <label class="sr-only" for="feedback-text">Autre raison</label>
+          <input id="feedback-text" type="text" maxlength="180" placeholder="Autre raison (facultatif)" />
+          <button class="modal-primary" type="submit">Envoyer <i data-lucide="send" aria-hidden="true"></i></button>
+        </form>
+      </section>
+    </div>
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

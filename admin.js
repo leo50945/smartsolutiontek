@@ -1,10 +1,7 @@
+import { subscribeToOverview } from "./firebase.js";
+
 const ADMIN_PASSWORD = "leo1111";
 const authKey = "sst_admin_authenticated";
-const statsKey = "sst_local_stats";
-
-function readStats() {
-  return JSON.parse(localStorage.getItem(statsKey) || '{"visits":0,"whatsappClicks":0}');
-}
 
 function requireAuthentication() {
   if (sessionStorage.getItem(authKey) !== "true") window.location.replace("login.html");
@@ -24,9 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   requireAuthentication();
-  const stats = readStats();
-  document.getElementById("visit-count").textContent = stats.visits;
-  document.getElementById("click-count").textContent = stats.whatsappClicks;
-  document.getElementById("conversion-rate").textContent = stats.visits ? `${Math.round((stats.whatsappClicks / stats.visits) * 100)} %` : "0 %";
+  subscribeToOverview((stats) => {
+    const views = stats.views || 0;
+    const clicks = stats.whatsappClicks || 0;
+    document.getElementById("visit-count").textContent = views;
+    document.getElementById("yes-count").textContent = stats.modalYes || 0;
+    document.getElementById("no-count").textContent = stats.modalNo || 0;
+    document.getElementById("click-count").textContent = clicks;
+    document.getElementById("feedback-count").textContent = stats.feedbackSubmitted || 0;
+    document.getElementById("conversion-rate").textContent = views ? `${Math.round((clicks / views) * 100)} %` : "0 %";
+  });
   document.getElementById("logout").addEventListener("click", () => { sessionStorage.removeItem(authKey); window.location.replace("login.html"); });
 });

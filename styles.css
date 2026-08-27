@@ -45,3 +45,31 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyst
 .notice h2 { margin: 0; font-size: 16px; }
 .notice p { margin: 8px 0 0; color: #64748b; font-size: 14px; line-height: 1.55; }
 @media (min-width: 640px) { .metric-grid { grid-template-columns: repeat(3, 1fr); } .admin-card { padding: 38px; } }
+.modal-open { overflow: hidden; }
+.modal-backdrop { position: fixed; inset: 0; z-index: 50; display: grid; place-items: end center; padding: 18px; background: rgba(15, 23, 42, .32); backdrop-filter: blur(7px); }
+.feedback-modal { position: relative; width: min(100%, 420px); padding: 29px 24px 24px; border: 1px solid rgba(255,255,255,.55); border-radius: 25px; background: #fff; box-shadow: 0 24px 70px rgba(15, 23, 42, .22); animation: modal-in 260ms ease-out; }
+.feedback-modal h2 { margin: 10px 0 0; color: #0f172a; font-size: 26px; letter-spacing: -.04em; line-height: 1.13; }
+.feedback-modal p { margin: 10px 0 0; color: #64748b; font-size: 15px; line-height: 1.55; }
+.modal-icon { display: grid; width: 45px; height: 45px; place-items: center; border-radius: 14px; background: #e8f7ee; color: #12824b; }
+.modal-icon svg { width: 22px; }
+.modal-close { position: absolute; top: 17px; right: 17px; display: grid; width: 34px; height: 34px; place-items: center; border: 0; border-radius: 10px; background: #f4f6f5; color: #64748b; cursor: pointer; }
+.modal-close svg, .modal-back svg { width: 17px; }
+.modal-actions { display: grid; gap: 10px; margin-top: 23px; }
+.modal-primary, .modal-secondary { display: flex; min-height: 51px; width: 100%; align-items: center; justify-content: center; gap: 8px; border-radius: 13px; padding: 11px 16px; font: inherit; font-size: 15px; font-weight: 650; cursor: pointer; }
+.modal-primary { border: 1px solid #12824b; background: #12824b; color: #fff; box-shadow: 0 7px 14px rgba(18,130,75,.14); }
+.modal-primary svg { width: 18px; }
+.modal-secondary { border: 1px solid #e2e8f0; background: #fff; color: #475569; }
+.modal-primary:hover { background: #096d3b; }
+.modal-secondary:hover { background: #f8fafc; }
+.modal-back { display: inline-flex; align-items: center; gap: 5px; margin: 0 0 14px; border: 0; background: transparent; color: #64748b; font: inherit; font-size: 13px; cursor: pointer; }
+.reason-options { display: flex; flex-wrap: wrap; gap: 8px; margin: 19px 0 11px; }
+.reason-options button { border: 1px solid #dbe3de; border-radius: 999px; background: #fff; padding: 8px 11px; color: #475569; font: inherit; font-size: 13px; cursor: pointer; }
+.reason-options button.is-selected { border-color: #12824b; background: #e8f7ee; color: #087440; }
+#feedback-text { width: 100%; min-height: 47px; margin: 0 0 10px; border: 1px solid #dbe3de; border-radius: 12px; padding: 0 12px; font: inherit; font-size: 14px; }
+#feedback-text:focus { border-color: #12824b; outline: 3px solid rgba(18,130,75,.13); }
+.thanks { padding: 23px 4px; text-align: center; }
+.thanks svg { width: 31px; height: 31px; color: #12824b; }
+.thanks h2 { margin-top: 11px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@keyframes modal-in { from { transform: translateY(14px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@media (min-width: 640px) { .modal-backdrop { place-items: center; } .feedback-modal { padding: 32px; } }

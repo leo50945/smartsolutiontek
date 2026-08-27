@@ -13,14 +13,17 @@
         <div><p class="eyebrow">SmartSolutionTek</p><h1 id="stats-title">Statistiques</h1></div>
         <button class="logout" id="logout" type="button">Déconnexion</button>
       </div>
-      <p class="admin-intro">Suivi local de démonstration. Connectez une source analytics pour voir les chiffres de tous les visiteurs.</p>
+      <p class="admin-intro">Données globales synchronisées avec Firebase.</p>
       <section class="metric-grid" aria-label="Indicateurs de performance">
-        <article class="metric-card"><p>Visites enregistrées</p><strong id="visit-count">—</strong><span>sur cet appareil</span></article>
-        <article class="metric-card"><p>Clics WhatsApp</p><strong id="click-count">—</strong><span>sur cet appareil</span></article>
-        <article class="metric-card"><p>Taux de clic</p><strong id="conversion-rate">—</strong><span>clics / visites</span></article>
+        <article class="metric-card"><p>Visites</p><strong id="visit-count">—</strong><span>sessions enregistrées</span></article>
+        <article class="metric-card"><p>Oui, intéressé</p><strong id="yes-count">—</strong><span>ouverture WhatsApp depuis la modal</span></article>
+        <article class="metric-card"><p>Pas maintenant</p><strong id="no-count">—</strong><span>retours négatifs</span></article>
+        <article class="metric-card"><p>Clics WhatsApp</p><strong id="click-count">—</strong><span>tous les CTA</span></article>
+        <article class="metric-card"><p>Taux WhatsApp</p><strong id="conversion-rate">—</strong><span>clics / visites</span></article>
+        <article class="metric-card"><p>Retours envoyés</p><strong id="feedback-count">—</strong><span>raison facultative</span></article>
       </section>
-      <section class="notice"><h2>Pour des statistiques réelles</h2><p>Cette version statique ne peut pas centraliser les données de tous les visiteurs. Utilisez Google Analytics, Meta Pixel ou Firebase pour obtenir les totaux réels de vos campagnes.</p></section>
+      <section class="notice"><h2>Lecture en direct</h2><p>Les compteurs se mettent à jour automatiquement lorsque les visiteurs interagissent avec la page.</p></section>
     </main>
-    <script src="admin.js"></script>
+    <script type="module" src="admin.js"></script>
   </body>
 </html>
