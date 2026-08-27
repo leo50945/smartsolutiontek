@@ -21,4 +21,17 @@ Ce dossier peut être déployé tel quel sur Vercel, Netlify ou GitHub Pages. Au
 
 ## Suivi analytics
 
-Le clic appelle déjà `trackEvent("whatsapp_redirect_click")` dans `script.js`. Pour ajouter Meta Pixel ou Google Analytics plus tard, installez le script officiel du fournisseur puis adaptez le contenu de cette fonction, sans toucher au CTA.
+Google Tag Manager (`GTM-P75F7ZGN`) est installé dans `index.html`. Le clic appelle déjà `trackEvent("whatsapp_redirect_click")` dans `script.js` et envoie cet événement à `dataLayer`.
+
+Dans Google Tag Manager, publiez ensuite :
+
+1. une balise de configuration Google Analytics 4 déclenchée sur toutes les pages ;
+2. une balise d'événement GA4 nommée `whatsapp_redirect_click`, avec un déclencheur **Événement personnalisé** du même nom.
+
+Google Analytics affichera alors les visites (`page_view`) et les clics WhatsApp. Utilisez le mode Aperçu de GTM avant de publier pour vérifier les deux événements.
+
+## Tableau de statistiques
+
+Les pages `login.html` et `stats.html` existent sans lien depuis la landing. Le mot de passe demandé est `leo1111`.
+
+Important : cette protection et les chiffres actuels sont locaux au navigateur ; avec un site statique, ils ne peuvent ni sécuriser réellement l'accès ni mesurer tous les visiteurs. Pour un tableau fiable accessible depuis n'importe quel appareil, connectez Google Analytics, Meta Pixel ou un backend (Firebase, par exemple).

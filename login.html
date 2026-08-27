@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Accès statistiques | SmartSolutionTek</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <section class="admin-card" aria-labelledby="login-title">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <p class="eyebrow">SmartSolutionTek</p>
+        <h1 id="login-title">Statistiques</h1>
+        <p class="admin-intro">Entrez votre mot de passe pour accéder au tableau de suivi.</p>
+        <form id="login-form" class="login-form">
+          <label for="password">Mot de passe</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+          <p id="login-error" class="form-error hidden" role="alert">Mot de passe incorrect.</p>
+          <button type="submit" class="cta-button">Accéder aux statistiques</button>
+        </form>
+      </section>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>

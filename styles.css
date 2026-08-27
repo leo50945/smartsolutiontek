@@ -8,6 +8,7 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyst
 .card { padding: 32px 26px 28px; border: 1px solid rgba(15, 23, 42, .075); border-radius: 24px; background: rgba(255, 255, 255, .88); box-shadow: 0 18px 50px rgba(15, 23, 42, .065), 0 1px 2px rgba(15, 23, 42, .025); }
 .icon-orb { display: grid; width: 54px; height: 54px; place-items: center; border: 1px solid #b7e4cc; border-radius: 18px; background: #e8f7ee; color: #12824b; }
 .icon-orb svg { width: 26px; height: 26px; stroke-width: 2.2; }
+.eyebrow { color: #12824b; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .cta-button { display: flex; min-height: 56px; width: 100%; align-items: center; justify-content: center; gap: 10px; border-radius: 15px; background: #12824b; padding: 13px 18px; color: white; font-size: 16px; font-weight: 600; line-height: 1.35; box-shadow: 0 7px 14px rgba(18, 130, 75, .16); transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease; }
 .cta-button svg { width: 19px; height: 19px; transition: transform 180ms ease; }
 .cta-button:hover { background: #096d3b; box-shadow: 0 9px 18px rgba(18, 130, 75, .2); transform: translateY(-1px); }
@@ -20,3 +21,27 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyst
 .fallback button { margin-top: 7px; border-radius: 7px; color: #087440; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 @media (min-width: 640px) { .card { padding: 42px 42px 36px; } .content-wrap { padding: 48px 0 32px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
+.admin-body { min-height: 100svh; margin: 0; background: #f6f7f5; color: #0f172a; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.admin-shell { display: grid; min-height: 100svh; place-items: center; padding: 24px; }
+.admin-card { width: min(100%, 410px); padding: 32px 26px; border: 1px solid rgba(15, 23, 42, .08); border-radius: 24px; background: #fff; box-shadow: 0 18px 50px rgba(15, 23, 42, .07); }
+.admin-card .brand-mark { margin-bottom: 24px; font-size: 14px; font-weight: 700; }
+.admin-card h1, .stats-header h1 { margin: 7px 0 0; font-size: 30px; letter-spacing: -.04em; line-height: 1.15; }
+.admin-intro { margin: 13px 0 0; color: #64748b; font-size: 15px; line-height: 1.55; }
+.login-form { display: grid; gap: 9px; margin-top: 28px; }
+.login-form label { font-size: 14px; font-weight: 600; }
+.login-form input { min-height: 50px; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0 14px; font: inherit; }
+.login-form input:focus { border-color: #12824b; outline: 3px solid rgba(18, 130, 75, .16); }
+.login-form .cta-button { margin-top: 9px; border: 0; cursor: pointer; }
+.form-error { margin: 0; color: #b42318; font-size: 13px; }
+.stats-shell { width: min(100% - 40px, 900px); margin: 0 auto; padding: 42px 0; }
+.stats-header { display: flex; align-items: end; justify-content: space-between; gap: 18px; }
+.logout { padding: 9px 0; border: 0; background: transparent; color: #526274; font: inherit; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.metric-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 30px; }
+.metric-card, .notice { border: 1px solid rgba(15, 23, 42, .08); border-radius: 18px; background: #fff; box-shadow: 0 6px 20px rgba(15, 23, 42, .035); }
+.metric-card { padding: 23px; }
+.metric-card p, .metric-card span { margin: 0; color: #64748b; font-size: 14px; }
+.metric-card strong { display: block; margin: 12px 0 4px; font-size: 35px; letter-spacing: -.055em; }
+.notice { margin-top: 18px; padding: 23px; }
+.notice h2 { margin: 0; font-size: 16px; }
+.notice p { margin: 8px 0 0; color: #64748b; font-size: 14px; line-height: 1.55; }
+@media (min-width: 640px) { .metric-grid { grid-template-columns: repeat(3, 1fr); } .admin-card { padding: 38px; } }

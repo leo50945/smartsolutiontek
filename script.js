@@ -1,6 +1,13 @@
 const whatsappNumber = "50942536029";
 const whatsappMessage = "Bonjour, je viens de voir votre publicité concernant la création de site web et j'aimerais en discuter.";
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+const localStatsKey = "sst_local_stats";
+
+function updateLocalStats(field) {
+  const stats = JSON.parse(localStorage.getItem(localStatsKey) || '{"visits":0,"whatsappClicks":0}');
+  stats[field] += 1;
+  localStorage.setItem(localStatsKey, JSON.stringify(stats));
+}
 
 function trackEvent(eventName) {
   // Point d'intégration futur : Meta Pixel, Google Analytics, etc.
@@ -18,9 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const copyButton = document.getElementById("copy-number");
   // L'attribut href dans le HTML garde un lien de secours si les CDN ne chargent pas.
   cta.href = whatsappUrl;
+  if (!sessionStorage.getItem("sst_visit_recorded")) {
+    updateLocalStats("visits");
+    sessionStorage.setItem("sst_visit_recorded", "true");
+  }
 
   cta.addEventListener("click", () => {
     trackEvent("whatsapp_redirect_click");
+    updateLocalStats("whatsappClicks");
     // Le lien ouvre WhatsApp dans l'onglet courant, sans pop-up ni nouvelle fenêtre.
     window.setTimeout(showFallback, 1800);
   });
