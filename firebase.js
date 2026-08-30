@@ -14,13 +14,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBe0vmFHNb5u8zfEc8osdQ_CS45NWJWiH8",
-  authDomain: "kobechec.firebaseapp.com",
-  projectId: "kobechec",
-  storageBucket: "kobechec.firebasestorage.app",
-  messagingSenderId: "35098984421",
-  appId: "1:35098984421:web:fed9f7adde0e98be8db90c",
-  measurementId: "G-JH7Y3P59WC",
+  apiKey: "AIzaSyA2jDVX1-_TZJkOLqUJs7NQUJZnPW9ZoIA",
+  authDomain: "damekob-69b90.firebaseapp.com",
+  projectId: "damekob-69b90",
+  storageBucket: "damekob-69b90.firebasestorage.app",
+  messagingSenderId: "1047314759653",
+  appId: "1:1047314759653:web:ce5ab09f8c2e17e99eb90c",
+  measurementId: "G-QCN717Q50F",
 };
 
 const db = getFirestore(initializeApp(firebaseConfig));
