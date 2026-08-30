@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.setTimeout(() => {
       openModal();
       sessionStorage.setItem("sst_feedback_prompted", "true");
-    }, 6500);
+    }, 250);
   }
 
   cta.addEventListener("click", (event) => {
